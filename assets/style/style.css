@@ -62,10 +62,29 @@
 		//margin-top:25px;
 		padding-top:15px;
 	}
+	.info-wrap i, .work-wrap i{
+		color: #ff4b39;
+		
+		}
+	.info-wrap li, .work-wrap li{
+		font-size:16px;
+		padding:3px 0px;
+	}
 	
 	.wrap-portfolio{
 		font-size:42px;
 		text-align:center;
+	}
+	
+	.skills-wrap {
+		//float: left;
+		position:relative;
+		display: inline-block;
+		width: 200px;
+	}
+	.skills-rate {
+		position:relative;
+		display: inline;
 	}
 	
 /* content */	
@@ -82,11 +101,23 @@
 	  //  border-top: 1px solid #EFF5FD;
 }
 
-ol .edu-li {
+ol .edu-li1 {
 		display: inline-block;
 	    float:left;
-		padding: 0px 0px 0px 100px;
+		padding: 7px 0px 0px 70px;
 	}
+	
+ol .edu-li2 {
+		display: inline-block;
+	    float:left;
+		padding: 7px 0px 0px 65px;
+	}
+
+ol .edu-li0 {
+		display: inline-block;
+	    float:left;
+		padding: 7px 0px 0px 104px;
+	}	
 
 .wrap-slills {
 		margin-right:0%;	
