@@ -1,84 +1,27 @@
-// read more для блоку "Чому вибрати нас"
-
-jQuery(function() {
-    jQuery( ".button1" ).click(function() {
-      jQuery(this).toggleClass( "hide_more", 400, "easeOutSine" );
-      jQuery( ".readmore1" ).toggleClass( "show_more_text", 500, "easeOutSine" );
-    });
-        jQuery( ".button2" ).click(function() {
-        jQuery(this).toggleClass( "hide_more", 400, "easeOutSine" );
-      jQuery( ".readmore2" ).toggleClass( "show_more_text", 500, "easeOutSine" );
-    });
-        jQuery( ".button3" ).click(function() {
-        jQuery(this).toggleClass( "hide_more", 400, "easeOutSine" );
-      jQuery( ".readmore3" ).toggleClass( "show_more_text", 500, "easeOutSine" );
-    }); 
-
-}); 
-
-
-//плавний скрол меню до секции
-
-jQuery(document).ready(function(){
-	jQuery(".scroll-item").on("click","a", function (event) {
-        
-        event.preventDefault();
-
-		//Забираємо Айди з Урла
-		var id  = jQuery(this).attr('href'),
-
-		//Получаєм висоту до якоря
-			top = jQuery(id).offset().top;
-		
-		//Анімуємо перехід до якоря
-		jQuery('body,html').animate({scrollTop: top-60}, 1500);
-	});
-});
-
-
-
-$('.more-skill').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
-        if (visible) {
-            $('.chart').easyPieChart({
-                //your configuration goes here
-                easing: 'easeOut',
-                delay: 3000,
-                barColor:'#68c3a3',
-                trackColor:'rgba(255,255,255,0.2)',
-                scaleColor: false,
-                lineWidth: 8,
-                size: 140,
-                animate: 2000,
-                onStep: function(from, to, percent) {
-                    this.el.children[0].innerHTML = Math.round(percent);
-                }
-
-            });
-            $(this).unbind('inview');
-        }
-    });
-	
-	
-	/**!
- * easyPieChart
+/**!
+ * easy-pie-chart
  * Lightweight plugin to render simple, animated and retina optimized pie charts
  *
  * @license 
  * @author Robert Fleischmann <rendro87@gmail.com> (http://robert-fleischmann.de)
- * @version 2.1.6
+ * @version 2.1.7
  **/
 
-(function(root, factory) {
-    if(typeof exports === 'object') {
-        module.exports = factory(require('jquery'));
-    }
-    else if(typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
-    }
-    else {
-        factory(root.jQuery);
-    }
-}(this, function($) {
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module unless amdModuleId is set
+    define([], function () {
+      return (root['EasyPieChart'] = factory());
+    });
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    root['EasyPieChart'] = factory();
+  }
+}(this, function () {
 
 /**
  * Renderer to render the chart on a canvas object
@@ -91,7 +34,7 @@ var CanvasRenderer = function(el, options) {
 
 	el.appendChild(canvas);
 
-	if (typeof(G_vmlCanvasManager) !== 'undefined') {
+	if (typeof(G_vmlCanvasManager) === 'object') {
 		G_vmlCanvasManager.initElement(canvas);
 	}
 
@@ -406,16 +349,6 @@ var EasyPieChart = function(el, opts) {
 	init();
 };
 
-$.fn.easyPieChart = function(options) {
-	return this.each(function() {
-		var instanceOptions;
-
-		if (!$.data(this, 'easyPieChart')) {
-			instanceOptions = $.extend({}, options, $(this).data());
-			$.data(this, 'easyPieChart', new EasyPieChart(this, instanceOptions));
-		}
-	});
-};
-
+return EasyPieChart;
 
 }));
