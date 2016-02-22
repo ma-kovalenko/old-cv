@@ -402,11 +402,6 @@
 		<footer class="footer container">
 			<div class="row">
 				<div class="col-md-12">
-				<div class="more-skill">
-				<div class="chart" data-percent="68" data-color="3498db"></div>
-				
-				</div>
-				
 					<ul>
 						<li><!--<i class="fa fa-twitter"><i>--><a href="#"><span>Twitter</span></a>
 						</li>
@@ -428,31 +423,7 @@
 <script src="assets/js/jquery-2.1.4.js"></script>
 <script src="assets/js/jquery.mobile.custom.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://trendytheme.net/demo/iamx/v/assets/js/jquery.easypiechart.js"></script>
 <script src="assets/js/timeline.js"></script><!--   Resource jQuery -->
-	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		var chart = window.chart = new EasyPieChart(document.querySelector('div'), {
-			easing: 'easeOutElastic',
-			delay: 3000,
-			barColor: '#69c',
-			trackColor: '#ace',
-			scaleColor: false,
-			lineWidth: 20,
-			trackWidth: 16,
-			lineCap: 'butt',
-			onStep: function(from, to, percent) {
-				this.el.children[0].innerHTML = Math.round(percent);
-			}
-		});
-
-		document.querySelector('.js_update').addEventListener('click', function(e) {
-			chart.update(Math.random()*200-100);
-		});
-
-	});
-	</script>
 <script>
 jQuery(document).ready(function($){
  jQuery("#testimonial-home .carousel-indicators li:first").addClass("active");
