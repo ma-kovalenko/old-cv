@@ -416,10 +416,6 @@ Main Components TIME LINE
 .cd-horizontal-timeline .events a.selected {
   pointer-events: none;
 }
-.cd-horizontal-timeline .events a.selected::after {
-  background-color: #eff5f9;
-  border-color: #eff5f9;
-}
 .cd-horizontal-timeline .events a.older-event::after {
   border-color: #6077DC;
 }
