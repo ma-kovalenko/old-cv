@@ -5,27 +5,16 @@
 	
 }
 
-@media only screen and (max-width: 992px) {
-.container {
-    width: 670px  !important;
-}	
-}
-
-@media only screen and (max-width: 768px){
-.container {
-    width: 470px  !important;
-}
-}
-
-	@media only screen and (min-width: 1100px) {
-	  .cd-horizontal-timeline {
+@media only screen and (min-width: 1100px) {
+	.cd-horizontal-timeline {
 		margin: 1em auto;
-	  }
-	  .cd-horizontal-timeline::before {
+	}
+	.cd-horizontal-timeline::before {
 		/* never visible - this is used in jQuery to check the current MQ */
 		content: 'desktop';
-	  }
 	}
+}
+
 @media only screen and (min-width: 768px) {
   .cd-horizontal-timeline .events-content h2 {
     font-size: 7rem;
